@@ -28,68 +28,68 @@ else ()
     endif ()
 endif ()
 
-include_directories(${CMAKE_SOURCE_DIR}/thirdparty/unrar)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar)
 
 set(LIB_SPECIFIC_SOURCES
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/dll.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/dll.cpp)
 set(LIB_SPECIFIC_HEADERS
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/dll.hpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/version.hpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/dll.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/version.hpp)
 
 set(BIN_SPECIFIC_SOURCES
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/recvol.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/recvol.cpp)
 
 set(UNRAR_SOURCES
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/rar.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/scantree.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/qopen.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/cmddata.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/rs.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/rs16.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/filestr.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/strlist.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/strfn.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/pathfn.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/smallfn.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/global.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/file.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/filefn.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/filcreat.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/archive.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/arcread.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/unicode.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/system.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/isnt.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/crypt.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/crc.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/rawread.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/encname.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/resource.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/match.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/timefn.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/rdwrfn.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/consio.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/options.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/errhnd.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/rarvm.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/secpassword.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/rijndael.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/getbits.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/sha1.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/sha256.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/blake2s.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/hash.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/extinfo.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/extract.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/volume.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/list.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/find.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/unpack.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/headers.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/threadpool.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/rs16.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/cmddata.cpp
-    ${CMAKE_SOURCE_DIR}/thirdparty/unrar/ui.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/rar.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/scantree.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/qopen.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/cmddata.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/rs.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/rs16.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/filestr.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/strlist.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/strfn.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/pathfn.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/smallfn.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/global.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/file.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/filefn.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/filcreat.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/archive.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/arcread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/unicode.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/system.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/isnt.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/crypt.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/crc.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/rawread.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/encname.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/resource.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/match.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/timefn.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/rdwrfn.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/consio.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/options.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/errhnd.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/rarvm.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/secpassword.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/rijndael.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/getbits.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/sha1.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/sha256.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/blake2s.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/hash.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/extinfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/extract.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/volume.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/list.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/find.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/unpack.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/headers.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/threadpool.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/rs16.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/cmddata.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/ui.cpp
 )
 
 if (BIN_ONLY)
