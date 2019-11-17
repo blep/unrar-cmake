@@ -92,6 +92,10 @@ set(UNRAR_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/unrar/ui.cpp
 )
 
+# Disable warning C4996:  'GetVersionExW': was declared deprecated
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4996")
+
+
 if (BIN_ONLY)
     add_subdirectory(bin)
 elseif (LIB_ONLY)

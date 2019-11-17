@@ -26,7 +26,7 @@ Unpack::Unpack(ComprDataIO *DataIO)
   UnpSomeRead=false;
 #ifdef RAR_SMP
   MaxUserThreads=1;
-  UnpThreadPool=CreateThreadPool();
+  UnpThreadPool=NULL;
   ReadBufMT=NULL;
   UnpThreadData=NULL;
 #endif
@@ -52,11 +52,22 @@ Unpack::~Unpack()
   if (Window!=NULL)
     free(Window);
 #ifdef RAR_SMP
-  DestroyThreadPool(UnpThreadPool);
+  delete UnpThreadPool;
   delete[] ReadBufMT;
   delete[] UnpThreadData;
 #endif
 }
+
+
+#ifdef RAR_SMP
+void Unpack::SetThreads(uint Threads)
+{
+  // More than 8 threads are unlikely to provide noticeable gain
+  // for unpacking, but would use the additional memory.
+  MaxUserThreads=Min(Threads,8);
+  UnpThreadPool=new ThreadPool(MaxUserThreads);
+}
+#endif
 
 
 void Unpack::Init(size_t WinSize,bool Solid)
@@ -135,7 +146,7 @@ void Unpack::Init(size_t WinSize,bool Solid)
 }
 
 
-void Unpack::DoUnpack(int Method,bool Solid)
+void Unpack::DoUnpack(uint Method,bool Solid)
 {
   // Methods <50 will crash in Fragmented mode when accessing NULL Window.
   // They cannot be called in such mode now, but we check it below anyway
@@ -206,6 +217,7 @@ void Unpack::UnpInitData(bool Solid)
   UnpInitData20(Solid);
 #endif
   UnpInitData30(Solid);
+  UnpInitData50(Solid);
 }
 
 
