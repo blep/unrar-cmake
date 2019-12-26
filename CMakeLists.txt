@@ -1,14 +1,14 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.11)
 
 project(unrar-cmake CXX)
-set(PROJECT_VERSION "0.1.1")
+set(PROJECT_VERSION "5.8.3")
 
-option(BIN_ONLY "If set to ON, then only the binary will be built.")
-option(LIB_ONLY "If set to ON, then only the library will be built.")
-option(BUILD_STATIC "If set to ON, a static library will be built.")
-option(INSTALL_HEADERS_TO_ROOT "If set to ON, dll.hpp and version.hpp will be copied directly to the root of your include directory.")
+option(UNRAR_BIN_ONLY "If set to ON, then only the binary will be built.")
+option(UNRAR_LIB_ONLY "If set to ON, then only the library will be built.")
+option(UNRAR_BUILD_STATIC "If set to ON, a static library will be built.")
+option(UNRAR_INSTALL_HEADERS_TO_ROOT "If set to ON, dll.hpp and version.hpp will be copied directly to the root of your include directory.")
 
-if (${CMAKE_CXX_COMPILER_ID} STREQUAL "MSVC")
+if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     add_definitions(-D_SCL_SECURE_NO_WARNINGS
                     -D_CRT_SECURE_NO_WARNINGS
                     -DWIN32_LEAN_AND_MEAN)
@@ -22,7 +22,7 @@ else ()
                     -DRAR_SMP)
     
     
-    if (${CMAKE_CXX_COMPILER_ID} STREQUAL "Clang")
+    if (CMAKE_CXX_COMPILER MATCHES ".*Clang") # AppleClang or Clang
     # Ignore some noncritical warnings
         SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-dangling-else -Wno-logical-op-parentheses -Wno-switch")
     endif ()
@@ -96,9 +96,9 @@ set(UNRAR_SOURCES
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /wd4996")
 
 
-if (BIN_ONLY)
+if (UNRAR_BIN_ONLY)
     add_subdirectory(bin)
-elseif (LIB_ONLY)
+elseif (UNRAR_LIB_ONLY)
     add_subdirectory(lib)
 else ()
     add_subdirectory(bin)
