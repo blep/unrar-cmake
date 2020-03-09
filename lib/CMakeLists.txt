@@ -7,7 +7,7 @@ add_definitions(-DRARDLL
                 -DSILENT)
 
 # Choose between static and shared based on user input
-if (BUILD_STATIC)
+if (UNRAR_BUILD_STATIC)
     add_library(unrar STATIC ${UNRAR_SOURCES})
 else ()
     add_library(unrar SHARED ${UNRAR_SOURCES})
@@ -18,6 +18,10 @@ find_package(Threads REQUIRED)
 if (Threads_FOUND)
     target_link_libraries(unrar ${CMAKE_THREAD_LIBS_INIT})
 endif ()
+# Makes the public headers automatically available when embedding
+target_include_directories( unrar 
+    PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../include
+)
 
 install(TARGETS unrar
         LIBRARY DESTINATION lib
