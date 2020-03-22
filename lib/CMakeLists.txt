@@ -1,16 +1,16 @@
 # Add the sources that only the binary needs
 set(UNRAR_SOURCES ${UNRAR_SOURCES} ${LIB_SPECIFIC_SOURCES})
 
-# Add the definitions specific for the library
-add_definitions(-DRARDLL
-                -DUNRAR
-                -DSILENT)
-
 # Choose between static and shared based on user input
 if (UNRAR_BUILD_STATIC)
     add_library(unrar STATIC ${UNRAR_SOURCES})
 else ()
     add_library(unrar SHARED ${UNRAR_SOURCES})
+endif ()
+
+target_compile_definitions( unrar PRIVATE RARDLL UNRAR SILENT )
+if (UNIX)
+    target_compile_definitions( unrar PUBLIC _UNIX )
 endif ()
 
 # Link against whatever threads library is present
